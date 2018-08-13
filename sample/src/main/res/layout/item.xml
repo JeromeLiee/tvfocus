@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jerome.tvfocus.widget.DecorRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:border="http://schemas.android.com/apk/res-auto"
+    android:layout_width="200dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center_horizontal"
+    android:focusable="true"
+    android:orientation="vertical"
+    border:bringToFront="true">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@color/colorAccent"
+        android:textColor="#fff"
+        android:gravity="center" />
+</com.jerome.tvfocus.widget.DecorRelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="border">
+        <!-- 焦点框.9图片资源-->
+        <attr name="focus" format="reference" />
+        <!-- 焦点框修正内距-->
+        <attr name="focusPaddingLeft" format="dimension" />
+        <attr name="focusPaddingTop" format="dimension" />
+        <attr name="focusPaddingRight" format="dimension" />
+        <attr name="focusPaddingBottom" format="dimension" />
+        <attr name="focusPadding" format="dimension" />
+        <!-- 是否允许显示焦点效果-->
+        <attr name="focusVisible" format="boolean" />
+
+        <!-- 阴影.9图片资源-->
+        <attr name="shadow" format="reference" />
+        <!-- 阴影修正内距-->
+        <attr name="shadowPaddingLeft" format="dimension" />
+        <attr name="shadowPaddingTop" format="dimension" />
+        <attr name="shadowPaddingRight" format="dimension" />
+        <attr name="shadowPaddingBottom" format="dimension" />
+        <attr name="shadowPadding" format="dimension" />
+        <!-- 是否允许显示阴影-->
+        <attr name="shadowVisible" format="boolean" />
+
+        <!-- 是否对控件进行缩放-->
+        <attr name="scaleWidget" format="boolean" />
+        <!-- 是否将控件置为最前-->
+        <attr name="bringToFront" format="boolean"/>
+
+    </declare-styleable>
+</resources>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:border="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#999"
+    android:clipChildren="false"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:clipChildren="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.jerome.tvfocus.widget.DecorButton
+            android:id="@+id/btn1"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="button-1"
+            android:textColor="#fff"
+            border:bringToFront="true" />
+
+        <com.jerome.tvfocus.widget.DecorButton
+            android:id="@+id/btn2"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/btn1"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="button-2"
+            android:textColor="#fff"
+            border:bringToFront="true" />
+
+        <com.jerome.tvfocus.widget.DecorTextView
+            android:id="@+id/tv1"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/btn2"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="TextView-1"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            border:bringToFront="true" />
+
+        <com.jerome.tvfocus.widget.DecorTextView
+            android:id="@+id/tv2"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@id/tv1"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="TextView-2"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            border:bringToFront="true" />
+    </RelativeLayout>
+
+
+    <com.jerome.tvfocus.widget.DecorEditText
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:background="#456"
+        android:gravity="center"
+        android:hint="EditText" />
+
+    <com.jerome.tvfocus.widget.DecorLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:clipChildren="false"
+        android:gravity="center"
+        border:focusVisible="false">
+
+        <com.jerome.tvfocus.widget.DecorFrameLayout
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorPrimary"
+            android:clipChildren="false"
+            android:focusable="true"
+            border:bringToFront="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="FrameLayout"
+                android:textColor="#fff" />
+
+        </com.jerome.tvfocus.widget.DecorFrameLayout>
+
+        <com.jerome.tvfocus.widget.DecorRelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorAccent"
+            android:clipChildren="false"
+            android:focusable="true"
+            border:bringToFront="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="RelativeLayout"
+                android:textColor="#fff" />
+
+        </com.jerome.tvfocus.widget.DecorRelativeLayout>
+
+        <com.jerome.tvfocus.widget.DecorLinearLayout
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorPrimary"
+            android:clipChildren="false"
+            android:focusable="true"
+            border:bringToFront="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="LinearLayout"
+                android:textColor="#fff" />
+
+        </com.jerome.tvfocus.widget.DecorLinearLayout>
+
+    </com.jerome.tvfocus.widget.DecorLinearLayout>
+
+    <com.jerome.tvfocus.widget.DecorRecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+
+</LinearLayout>
