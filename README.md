@@ -48,6 +48,7 @@ Android TV或盒子的焦点框处理工具。可根据焦点获取情况，自�
 
 #### 1.全局配置
 
+    // 在应用的Application中
     BorderConfig.init(R.drawable.item_focus)    // 焦点框资源
             .shadowRes(R.drawable.item_unfocus) // 阴影资源
             .scaleValues(1.0f, 1.2f, 1.1f)      // 放大的比例，默认为(1.0f, 1.2f, 1.1f)
