@@ -3,11 +3,13 @@ package com.jerome.tvfocus.animation;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.jerome.tvfocus.BorderConfig;
 import com.jerome.tvfocus.JLog;
 import com.jerome.tvfocus.view.ViewLayer;
 import com.jerome.tvfocus.widget.DecorLinearLayout;
+import com.jerome.tvfocus.widget.DecorRecyclerView;
 
 
 /**
@@ -68,9 +70,9 @@ public class AnimHelper {
     private void bringToFront(View view, ViewLayer layer, boolean hasFocus) {
         if (layer.isBringToFront()) {
             if (hasFocus) {
-                // 父布局为DecorLinearLayout或DecorLinearLayout，则使用bringToFront方法会有问题
-                if (view.getParent() instanceof DecorLinearLayout || view.getParent() instanceof DecorLinearLayout) {
-                    ((DecorLinearLayout) view.getParent()).invalidate();
+                // 父布局为DecorLinearLayout或DecorRecyclerView，则使用bringToFront方法会有问题
+                if (view.getParent() instanceof DecorLinearLayout || view.getParent() instanceof DecorRecyclerView) {
+                    ((ViewGroup) view.getParent()).invalidate();
                 } else {
                     view.bringToFront();
                 }

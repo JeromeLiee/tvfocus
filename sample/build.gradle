@@ -32,6 +32,6 @@ dependencies {
         implementation project(':tvfocus')
         println "implementation project(':tvfocus')"
     } else {
-        implementation 'com.jerome:tvfocus:1.0.1'
+        implementation 'com.jerome:tvfocus:1.0.2'
     }
 }

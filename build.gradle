@@ -20,6 +20,15 @@ allprojects {
         google()
         jcenter()
     }
+
+    gradle.taskGraph.whenReady {
+        tasks.each { task ->
+            if (task.name == 'mockableAndroidJar') {
+                task.enabled = false
+            }
+        }
+    }
+
     tasks.withType(Javadoc) {
         options.addStringOption('Xdoclint:none', '-quiet')
         options.addStringOption('encoding', 'UTF-8')

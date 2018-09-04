@@ -6,7 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
- * Created by feizhang on 2016/4/15.
+ * @author JeromeLiee
+ * @date 2018/9/4
  */
 public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
     private static final boolean DEFAULT_ADD_SPACE_ABOVE_FIRST_ITEM = false;
@@ -29,10 +30,6 @@ public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);
-        /*if (space <= 0) {
-            return;
-        }*/
-
         if (addSpaceAboveFirstItem && parent.getChildLayoutPosition(view) < 1 || parent.getChildLayoutPosition(view) >= 1) {
             if (getOrientation(parent) == LinearLayoutManager.VERTICAL) {
                 outRect.top = space;
