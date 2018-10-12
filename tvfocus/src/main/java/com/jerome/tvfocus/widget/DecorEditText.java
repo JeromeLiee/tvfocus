@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.widget.EditText;
 
 import com.jerome.tvfocus.AttrHandler;
+import com.jerome.tvfocus.view.ViewLayer;
 
 /**
  * @author JeromeLiee
@@ -12,6 +13,8 @@ import com.jerome.tvfocus.AttrHandler;
  */
 
 public class DecorEditText extends EditText {
+    private ViewLayer viewLayer;
+
     public DecorEditText(Context context) {
         this(context, null);
     }
@@ -22,6 +25,16 @@ public class DecorEditText extends EditText {
 
     public DecorEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        AttrHandler.handle(context, attrs, this);
+        viewLayer = AttrHandler.handle(context, attrs, this);
+    }
+
+    @Override
+    public void setOnFocusChangeListener(OnFocusChangeListener l) {
+        OnFocusChangeListener onFocusChangeListener = getOnFocusChangeListener();
+        if (onFocusChangeListener != null) {
+            viewLayer.setOnFocusChangeListener(l);
+            return;
+        }
+        super.setOnFocusChangeListener(l);
     }
 }

@@ -17,7 +17,7 @@ import com.jerome.tvfocus.view.ViewLayerWrapper;
 
 public class AttrHandler {
 
-    public static void handle(Context context, AttributeSet attrs, View view) {
+    public static ViewLayer handle(Context context, AttributeSet attrs, View view) {
         if (BorderConfig.INSTANCE == null) {
             throw new RuntimeException("Must init BorderConfig object in Application!");
         }
@@ -75,6 +75,7 @@ public class AttrHandler {
         viewLayer.setBringToFront(bringToFront);
 
         viewLayer.createLayer();
+        return viewLayer;
     }
 
 }

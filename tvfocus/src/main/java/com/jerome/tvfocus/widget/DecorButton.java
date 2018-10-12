@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.widget.Button;
 
 import com.jerome.tvfocus.AttrHandler;
+import com.jerome.tvfocus.view.ViewLayer;
 
 
 /**
@@ -13,6 +14,7 @@ import com.jerome.tvfocus.AttrHandler;
  */
 
 public class DecorButton extends Button {
+    private ViewLayer viewLayer;
 
     public DecorButton(Context context) {
         this(context, null);
@@ -24,7 +26,18 @@ public class DecorButton extends Button {
 
     public DecorButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        AttrHandler.handle(context, attrs, this);
+        viewLayer = AttrHandler.handle(context, attrs, this);
     }
 
+    @Override
+    public void setOnFocusChangeListener(OnFocusChangeListener l) {
+        // 先判断是否已设置过焦点监听
+        // 如果已经设置过，则将本次设置OnFocusChangeListener对象传递给ViewLayerWrapper中进行监听回调
+        OnFocusChangeListener onFocusChangeListener = getOnFocusChangeListener();
+        if (onFocusChangeListener != null) {
+            viewLayer.setOnFocusChangeListener(l);
+            return;
+        }
+        super.setOnFocusChangeListener(l);
+    }
 }

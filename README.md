@@ -90,7 +90,7 @@ Android TV或盒子的焦点框处理工具。可根据焦点获取情况，自�
 
 ### Gradle使用
 
-    compile 'com.jerome:tvfocus:1.0.2'
+    compile 'com.jerome:tvfocus:1.0.3'
 
 ### 关于我
 

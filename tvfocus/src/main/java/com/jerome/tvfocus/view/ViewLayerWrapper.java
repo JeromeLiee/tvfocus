@@ -29,6 +29,7 @@ public class ViewLayerWrapper implements ViewLayer, View.OnFocusChangeListener {
     private DrawableLayer mFocusLayer;
     private boolean mBringToFront;
     private boolean mScaleWidget;
+    private View.OnFocusChangeListener mOnFocusChangeListener;
 
     public ViewLayerWrapper(View view) {
         mView = view;
@@ -157,7 +158,16 @@ public class ViewLayerWrapper implements ViewLayer, View.OnFocusChangeListener {
     }
 
     @Override
+    public void setOnFocusChangeListener(View.OnFocusChangeListener listener) {
+        mOnFocusChangeListener = listener;
+    }
+
+    @Override
     public void onFocusChange(View v, boolean hasFocus) {
+        // 外部添加的焦点监听回调
+        if (mOnFocusChangeListener != null) {
+            mOnFocusChangeListener.onFocusChange(v, hasFocus);
+        }
         AnimHelper.getInstance().handleFocusChanged(v, this, hasFocus);
     }
 

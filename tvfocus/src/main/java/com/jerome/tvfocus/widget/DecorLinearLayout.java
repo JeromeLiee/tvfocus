@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.jerome.tvfocus.AttrHandler;
+import com.jerome.tvfocus.view.ViewLayer;
 
 /**
  * @author JeromeLiee
@@ -14,6 +15,8 @@ import com.jerome.tvfocus.AttrHandler;
  */
 
 public class DecorLinearLayout extends LinearLayout {
+    private ViewLayer viewLayer;
+
     public DecorLinearLayout(Context context) {
         this(context, null);
     }
@@ -25,7 +28,7 @@ public class DecorLinearLayout extends LinearLayout {
     public DecorLinearLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         setChildrenDrawingOrderEnabled(true);
-        AttrHandler.handle(context, attrs, this);
+        viewLayer = AttrHandler.handle(context, attrs, this);
     }
 
     @Override
@@ -44,5 +47,15 @@ public class DecorLinearLayout extends LinearLayout {
             }
         }
         return super.getChildDrawingOrder(childCount, newOrder);
+    }
+
+    @Override
+    public void setOnFocusChangeListener(OnFocusChangeListener l) {
+        OnFocusChangeListener onFocusChangeListener = getOnFocusChangeListener();
+        if (onFocusChangeListener != null) {
+            viewLayer.setOnFocusChangeListener(l);
+            return;
+        }
+        super.setOnFocusChangeListener(l);
     }
 }

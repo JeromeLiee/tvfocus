@@ -34,7 +34,7 @@ publish {
     userOrg = 'jerome0722'
     groupId = 'com.jerome'
     artifactId = 'tvfocus'
-    publishVersion = '1.0.2'
+    publishVersion = '1.0.3'
     desc = ''
     website = ''
 }
